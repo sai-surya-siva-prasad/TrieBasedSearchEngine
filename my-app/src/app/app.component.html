@@ -1,0 +1,41 @@
+<div class="container"> 
+  <form>  
+    <div class="form-group">  
+      <h1 class="text-center text-primary">Dictionary App</h1>
+
+      <div class="input-group-prepend" style="margin-top: 33px; margin-left: 0px;padding: 14px;margin-bottom: 45px;">       
+        <input type="text" #inputs class="form-control" placeholder="Input the words" name="inputs" ngModel>    
+        <button type="button" span class="input-group-text" (click)="insertWords(inputs.value)" style="font-weight: 600;">Insert</button>
+      </div>
+
+      <!-- <div *ngIf="showInputInsert == true" style="margin-top: 33px;margin-left: 133px;">
+
+        {{inputInsertText}}
+
+      </div> -->
+
+      <div class="input-group-prepend">       
+        <input type="text" #words class="form-control" placeholder="Search the word" name="words" ngModel>    
+        <button type="button" span class="input-group-text" (click)="searchWords(words.value)" style="font-weight: 600;">Search</button>
+      </div>  
+
+      <div *ngIf="showResult == true">
+
+        <div *ngIf="result == true">
+            <div style="margin-top: 33px;margin-left: 133px;font-family: monospace;">
+                {{outputText}}
+            </div>
+        </div>
+        <div *ngIf="result == false">
+          <div style="margin-top: 33px;margin-left: 133px;font-family: monospace;">
+              {{outputText}}
+          </div>
+          <div *ngIf="FinalResult.length != 0" style="font-family: cursive;padding: 13px;/* margin-right: -9px; */margin-left: 55px;">
+          Did you mean any of these ?    ( {{FinalResult}} )
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+  <!-- <embed src="words.txt"> -->
+</div>
